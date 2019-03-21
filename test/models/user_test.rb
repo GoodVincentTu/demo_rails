@@ -26,4 +26,11 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = 'helloworld'
     assert @user.valid?
   end
+
+  test 'user will have default username' do
+    @new_user = User.create(
+      email: 'hello@example.com', password: 'helloworld',
+      password_confirmation: 'helloworld')
+    assert @new_user.username == 'hello'
+  end
 end
