@@ -1,0 +1,22 @@
+<h1>Sign up page</h1>
+
+<%= form_for @user, url: {action: "create"} do |f| %>
+  <!-- error message -->
+  <% if @user.errors.any? %>
+    <div>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  Email: <%= f.email_field :email, required: true %>
+  <br>
+  Password: <%= f.password_field :password, minlength: 8, required: true %>
+  <br>
+  Password Confirmation: <%= f.password_field :password_confirmation, minlength: 8, required: true%>
+  <br>
+  <%= f.submit "Submit" %>
+<% end %>
