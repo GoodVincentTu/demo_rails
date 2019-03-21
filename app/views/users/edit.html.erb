@@ -15,9 +15,9 @@
   <br>
   User Name : <%= f.text_field :username, placeholder: @user.username, minlength: 5 %>
   <br>
-  Password : <%= f.password_field :password %>
+  Password: <%= f.password_field :password, minlength: 8 %>
   <br>
-  Password Confirmation : <%= f.password_field :password_confirmation %>
+  Password Confirmation: <%= f.password_field :password_confirmation, minlength: 8 %>
   <br>
   <%= f.submit 'Save' %>
 <% end %>

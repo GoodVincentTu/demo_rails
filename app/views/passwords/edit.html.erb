@@ -1,0 +1,8 @@
+<h1>Reset Password</h1>
+<%= form_for :user, url: password_path(@user), html: {method: :patch} do |f| %>
+  Password: <%= f.password_field :password, minlength: 8, required: true %>
+  <br>
+  Password Confirmation: <%= f.password_field :password_confirmation, minlength: 8, required: true %>
+  <br>
+  <%= f.submit 'Save' %>
+<% end %>

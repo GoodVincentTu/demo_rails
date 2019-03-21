@@ -1,0 +1,9 @@
+<h1>Forgot Password</h1>
+
+<div>
+  <%= form_for :password, url: {action: 'create'} do |f| %>
+    Email: <%= f.email_field :email, required: true %>
+    <br>
+    <%= f.submit 'Submit' %>
+  <% end %>
+</div>
