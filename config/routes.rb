@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :users, only: [:new, :create, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :passwords, only: [:new, :edit, :update]
 end

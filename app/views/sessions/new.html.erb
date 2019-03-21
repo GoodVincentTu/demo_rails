@@ -1,0 +1,15 @@
+<h1>Log In</h1>
+
+<div>
+  <%= form_for :session, url: {action: 'create'} do |f| %>
+    Email: <%= f.email_field :email, required: true %>
+    <br>
+    Password: <%= f.password_field :password, minlength: 8, required: true %>
+    <br>
+    <%= f.submit "Log In" %>
+    <br>
+    <p>
+      <%= link_to  "Forgot Password?", new_password_path %>
+    </p>
+  <% end %>
+</div>
